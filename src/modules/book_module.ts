@@ -44,7 +44,7 @@ books.put("/updateBook/:id", async (request, response) => {
             message: "Book updated successfully!",
             result: updatedBook,
         });
-    } catch (error) {
+    } catch (error){
         return response.status(500).send({
             message: "Book Not found to update",
         
