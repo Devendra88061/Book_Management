@@ -4,7 +4,7 @@ import book from '../models/book';
 export const books = Router();
 
 // Add book record
-books.post("/addBook", async (request: any, response: any) => {
+books.post("/addBooks", async (request: any, response: any) => {
     let bookData = await book.findOne({ bookName: request.body.bookName });
     if (bookData) {
         return response.status(400).send({
@@ -57,7 +57,7 @@ books.put("/updateBook/:id", async (request, response) => {
 });
 
 // get all books record
-books.get("/getAllBooks", async (request, response) => {
+books.get("/getAllBooksRecord", async (request, response) => {
     try {
         const recordCount = await book.count();
         const booksData = await book.find();

@@ -37,6 +37,6 @@ app.get('/ping', (req,res)=>{
 
 // router 
 
-app.use("/book", books);
+app.use("/hello", books);
 
 
