@@ -40,3 +40,10 @@ The folder structure of this Book_management is explained below:
 
 # Delete Book
 - http://localhost:4000/book/deleteBook/Id 
+
+
+# Deploy Book_management on glitch from windows
+
+- go to glitch.com and open site
+- copy the git file path and then pest in the add from git section 
+- checkout on main branch
