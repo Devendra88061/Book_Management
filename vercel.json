@@ -1,13 +1,15 @@
 {
-    "version": 2,
-    "builds":[
-        {
-            "src":"index.ts",
-            "use":"@vercel/node"
-        }
-    ],
-    "routes":[{
-        "src":"*.*",
-        "dest":"/"
-    }]
-}
+    "build": {
+      "env": {
+        "PORT": 4000,
+        "MONGO_URL": "mongodb://0.0.0.0:27017/Book_management"
+      },
+      "cmd": "ts-node index.ts",
+      "src": ["index.ts", "src/**/*.ts"],
+      "preinstall": ["npm install -g typescript"]
+    },
+    "start": {
+      "cmd": "node index.js"
+    }
+  }
+  
