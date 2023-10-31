@@ -70,3 +70,25 @@ books.get("/getAllBooks", async (request, response) => {
     }
 });
 
+// get a single book Record
+books.get("/getSingleBook/:id", async (request, response) => {
+    try {
+        const id = request.params.id;
+        const booksData = await book.findById({ _id: id });
+        if (!booksData) {
+            response.status(400).json({
+                message: "Book record not found",
+            });
+        } else {
+            response.status(200).json({
+                message: "successful fetching of Book data",
+                result: booksData,
+            });
+        }
+    } catch (error) {
+        response.status(500).json({
+            message: "Something went wrong",
+            error: error,
+        });
+    }
+});
