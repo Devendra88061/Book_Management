@@ -46,8 +46,8 @@ books.put("/updateBook/:id", async (request, response) => {
         });
     } catch (error) {
         return response.status(500).send({
-            message: "Something went wrong",
-            error: error
+            message: "Book Not found to update",
+        
         });
     }
 });
@@ -65,7 +65,6 @@ books.get("/getAllBooks", async (request, response) => {
     } catch (error) {
         response.status(500).json({
             message: "Something went wrong",
-            error: error,
         });
     }
 });
@@ -77,7 +76,7 @@ books.get("/getSingleBook/:id", async (request, response) => {
         const booksData = await book.findById({ _id: id });
         if (!booksData) {
             response.status(400).json({
-                message: "Book record not found",
+                message: "Book record not found.",
             });
         } else {
             response.status(200).json({
@@ -87,8 +86,28 @@ books.get("/getSingleBook/:id", async (request, response) => {
         }
     } catch (error) {
         response.status(500).json({
-            message: "Something went wrong",
-            error: error,
+            message: "Book record not found",
+        });
+    }
+});
+
+// Delete book record
+books.delete("/deleteBook/:id", async (request, response) => {
+    try {
+        const id = request.params.id;
+        const booksData = await book.findByIdAndDelete({ _id: id });
+        if (!booksData) {
+            response.status(400).json({
+                message: "Book record not found",
+            });
+        } else {
+            response.status(200).json({
+                message: "successful delete book record",
+            });
+        }
+    } catch (error) {
+        response.status(500).json({
+            message: "Book not found to Delete",
         });
     }
 });
