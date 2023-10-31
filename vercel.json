@@ -1,15 +1,11 @@
 {
-    "build": {
-      "env": {
-        "PORT": 4000,
-        "MONGO_URL": "mongodb://0.0.0.0:27017/Book_management"
-      },
-      "cmd": "ts-node index.ts",
-      "src": ["index.ts", "src/**/*.ts"],
-      "preinstall": ["npm install -g typescript"]
+  "build": {
+    "env": {
+      "PORT": 4000,
+      "MONGO_URL": "mongodb://0.0.0.0:27017/Book_management"
     },
-    "start": {
-      "cmd": "node index.js"
-    }
+    "cmd": "ts-node index.ts",
+    "src": ["index.ts", "src/**/*.ts"],
+    "preinstall": ["npm install -g typescript"]
   }
-  
+}
