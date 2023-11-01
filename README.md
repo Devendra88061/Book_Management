@@ -40,3 +40,10 @@ The folder structure of this Book_management is explained below:
 
 # Delete Book
 - http://localhost:4000/book/deleteBook/Id 
+
+# Deploy Book_management on vercel from windows
+
+- go to vercel.com and open site
+- login with github select branch -> Devendra
+- deploy the project
+- check and run the project.
